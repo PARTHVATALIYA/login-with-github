@@ -47,7 +47,7 @@ is OFF.
 2. Activate the Login With GitHub plugin via the plugins admin page.
 3. Install and activate the plugin.
 4. Go to Settings → Login With GitHub to login or register to user
-6. Add shortcode login_with_github to login or registration file.
+6. Add shortcode lwg_auth_button to login or registration file.
 
 == Screenshots ==
 
@@ -59,3 +59,6 @@ is OFF.
 
 = 1.0.0 =
 * Initial Release.
+
+= 1.0.1 =
+* Sanitize setting fields.

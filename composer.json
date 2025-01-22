@@ -2,7 +2,7 @@
     "name": "parth/login-with-github",
     "autoload": {
         "psr-4": {
-            "Github\\Login\\": "./src/"
+            "LWG\\Auth\\": "./src/"
         }
     },
     "authors": [
