@@ -21,21 +21,21 @@ class ComposerStaticInit9a7faa1aa0eef94dc7afa59fb45002e5
         'L' => 
         array (
             'League\\OAuth2\\Client\\' => 21,
+            'LWG\\Auth\\' => 9,
         ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
-            'Github\\Login\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -45,6 +45,10 @@ class ComposerStaticInit9a7faa1aa0eef94dc7afa59fb45002e5
         array (
             0 => __DIR__ . '/..' . '/league/oauth2-client/src',
             1 => __DIR__ . '/..' . '/league/oauth2-github/src',
+        ),
+        'LWG\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -57,10 +61,6 @@ class ComposerStaticInit9a7faa1aa0eef94dc7afa59fb45002e5
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
-        ),
-        'Github\\Login\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

@@ -18,41 +18,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LWG_BASEFILE', __FILE__ );
-define( 'LWG_VERSION', '1.0.0' );
-define( 'LWG_ABSURL', plugins_url( '/', LWG_BASEFILE ) );
+define( 'LWG_AUTH_BASEFILE', __FILE__ );
+define( 'LWG_AUTH_VERSION', '1.0.0' );
+define( 'LWG_AUTH_ABSURL', plugins_url( '/', LWG_AUTH_BASEFILE ) );
 
 $vendor_file = __DIR__ . '/vendor/autoload.php';
 if ( is_readable( $vendor_file ) ) {
 	require_once $vendor_file;
 }
 
-/**
- * Plugin textdomain.
- */
-function login_with_github_textdomain() {
-	load_plugin_textdomain( 'login-with-github', false, basename( __DIR__ ) . '/languages' );
+if ( ! function_exists( 'lwg_auth_activation' ) ) {
+	/**
+	 * Plugin activation.
+	 */
+	function lwg_auth_activation() {
+	}
 }
-add_action( 'plugins_loaded', 'login_with_github_textdomain', 20 );
+register_activation_hook( __FILE__, 'lwg_auth_activation' );
 
-/**
- * Plugin activation.
- */
-function login_with_github_activation() {
+if ( ! function_exists( 'lwg_auth_deactivation' ) ) {
+	/**
+	 * Plugin deactivation.
+	 */
+	function lwg_auth_deactivation() {
+	}
 }
-register_activation_hook( __FILE__, 'login_with_github_activation' );
+register_deactivation_hook( __FILE__, 'lwg_auth_deactivation' );
 
-/**
- * Plugin deactivation.
- */
-function login_with_github_deactivation() {
+if ( ! function_exists( 'lwg_auth_init' ) ) {
+	/**
+	 * Initialization class.
+	 */
+	function lwg_auth_init() {
+		new \LWG\Auth\LoginWithGitHub();
+	}
 }
-register_deactivation_hook( __FILE__, 'login_with_github_deactivation' );
-
-/**
- * Initialization class.
- */
-function login_with_github_init() {
-	new \Github\Login\LoginWithGitHub();
-}
-add_action( 'plugins_loaded', 'login_with_github_init' );
+add_action( 'plugins_loaded', 'lwg_auth_init' );
