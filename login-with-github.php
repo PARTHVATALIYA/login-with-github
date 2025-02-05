@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Login with GitHub
  * Description: Allow users to login/register via Github.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Parth Vataliya
  * Author URI: https://profiles.wordpress.org/parthvataliya/
  * Text Domain: login-with-github

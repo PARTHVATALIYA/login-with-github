@@ -65,8 +65,10 @@ if ( ! class_exists( 'LoginWithGitHub' ) ) {
 			$this->register_enable = $github_login->get_option( 'registration_enabled' );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'lwg_auth_enqueue_scipts' ) );
+			add_action( 'login_enqueue_scripts', array( $this, 'lwg_auth_enqueue_scipts' ) );
 			add_action( 'init', array( $this, 'lwg_auth_register_shortcode' ) );
 			add_action( 'init', array( $this, 'lwg_auth_login_with_github' ) );
+			add_action( 'init', array( $this, 'lwg_auth_add_login_shortcode' ) );
 		}
 
 		/**
@@ -174,6 +176,20 @@ if ( ! class_exists( 'LoginWithGitHub' ) ) {
 					'redirectUri'  => $this->redirect_url,
 				)
 			);
+		}
+
+		/**
+		 * Initialize login button shortcode into forms.
+		 */
+		public function lwg_auth_add_login_shortcode() {
+			add_action( 'login_form', array( $this, 'lwg_auth_do_shortcode' ) );
+		}
+
+		/**
+		 * Add shortcode.
+		 */
+		public function lwg_auth_do_shortcode() {
+			echo do_shortcode( '[lwg_auth_button]' );
 		}
 	}
 }
