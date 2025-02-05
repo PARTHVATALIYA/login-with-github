@@ -4,7 +4,7 @@ Tags: GitHub login, sign in, sso, oauth, authentication
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,3 +62,6 @@ is OFF.
 
 = 1.0.1 =
 * Sanitize setting fields.
+
+= 1.0.2 =
+* Improve performance.
